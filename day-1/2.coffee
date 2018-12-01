@@ -6,14 +6,16 @@
 calibrate = (input)->
   # parse input
   steps = (parseInt(i, 10) for i in input.match /([+-]?\d+)/g)
+
   # init history
-  history = [freq = 0]
+  freq = 0
+  history = {"#{freq}": true}
+
   while true # loop until we find a dupe
     for step in steps
       freq = freq + step
-      return freq if freq in history
-      history.push freq
-
+      return freq if history[freq]
+      history[freq] = true
 
 ###
   Answer
