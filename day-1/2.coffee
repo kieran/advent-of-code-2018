@@ -1,4 +1,4 @@
-{ log, dir, assert } = console
+{ log, dir, assert, time, timeEnd } = console
 
 
 # takes an input string (-1, -2, -3)
@@ -17,11 +17,16 @@ calibrate = (input)->
       return freq if history[freq]
       history[freq] = true
 
+
 ###
   Answer
 ###
 
-log calibrate require './input.coffee'
+input = require './input.coffee'
+
+time 'runtime'
+log calibrate input
+timeEnd 'runtime'
 
 
 ###

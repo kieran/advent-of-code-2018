@@ -23,9 +23,11 @@ fingerprint = (input='')->
   Answer
 ###
 
-# time 'checksum'
-log checksum require './input.coffee'
-# timeEnd 'checksum'
+input = require './input.coffee'
+
+time 'runtime'
+log checksum input
+timeEnd 'runtime'
 
 
 ###

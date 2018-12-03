@@ -1,4 +1,4 @@
-{ log, dir, assert } = console
+{ log, dir, assert, time, timeEnd } = console
 
 
 # takes an input string (-1, -2, -3)
@@ -14,8 +14,11 @@ calibrate = (input)->
   Answer
 ###
 
-log calibrate require './input.coffee'
+input = require './input.coffee'
 
+time 'runtime'
+log calibrate input
+timeEnd 'runtime'
 
 ###
   Tests

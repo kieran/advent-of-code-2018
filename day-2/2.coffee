@@ -14,6 +14,7 @@ diffPositions = (one, two)->
   ret = []
   for i in [0..(one.length-1)]
     ret.push i unless one.charAt(i) is two.charAt(i)
+    return ret if ret.length > 1 # short-cut for max of 2 diffs
   ret
 
 
@@ -21,9 +22,11 @@ diffPositions = (one, two)->
   Answer
 ###
 
-# time 'process'
-log process require './input.coffee'
-# timeEnd 'process'
+input = require './input.coffee'
+
+time 'runtime'
+log process input
+timeEnd 'runtime'
 
 
 ###
